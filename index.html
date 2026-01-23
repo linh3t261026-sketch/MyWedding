@@ -2370,10 +2370,15 @@
     <script>
         document.getElementById("guestbook").addEventListener("submit", function (e) {
             e.preventDefault();
+            const formData = new FormData(this);
+  const guestOf = [];
+  this.querySelectorAll('input[name="guestOf"]:checked')
+    .forEach(cb => guestOf.push(cb.value));
+    formData.set("guestOf", guestOf.join(", "));
 
             fetch("https://script.google.com/macros/s/AKfycbwQNc18uc95u-QzgtmwER3UAFmAXzAHL_2RFkesjoLOrpGBrWdvW77IE3nlVDrM64F7Sg/exec", {
                 method: "POST",
-                body: new FormData(this)
+                body: formData
             })
                 .then(res => res.text())
                 .then(() => alert("Gửi thành công 💖"))
