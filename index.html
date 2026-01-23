@@ -2370,13 +2370,14 @@
     <script>
         document.getElementById("guestbook").addEventListener("submit", function (e) {
             e.preventDefault();
-            console.log("hello");
 
             fetch("https://script.google.com/macros/s/AKfycbwQNc18uc95u-QzgtmwER3UAFmAXzAHL_2RFkesjoLOrpGBrWdvW77IE3nlVDrM64F7Sg/exec", {
                 method: "POST",
                 body: new FormData(this)
             })
-                .then(() => alert("Đã gửi lời chúc 💖"));
+                .then(res => res.text())
+                .then(() => alert("Gửi thành công 💖"))
+                .catch(err => console.error(err));
         });
     </script>
     <!-- SCRIPT SLIDE -->
