@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Thiệp cưới Linh & Tho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="https://cdn.jsdelivr.net/npm/modernizr@2.8.3/modernizr.min.js"></script>
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="preload" as="image"
+        href="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/Anhthiep.webp"
+        fetchpriority="high">
+    <link rel="preload" as="image"
+        href="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02937.webp"
+        fetchpriority="high">
+    <link rel="preload" as="image"
+        href="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picturecoming.webp"
+        fetchpriority="high">
+
+    <style>
+        html,
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: 'Montserrat', sans-serif;
+            background: #fffaf7;
+            color: #5a3e36;
+            text-align: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* ===== RED ENVELOPE OPEN EFFECT ===== */
+        #red-envelope {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Hai nửa thiệp */
+        .envelope-panel {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/Anhthiep.jpg');
+            background-repeat: no-repeat;
+            background-size: 200% 100%;
+        }
+
+        /* NỬA TRÁI */
+        .envelope-panel.left {
+            left: 0;
+            background-position: left center;
+            transform-origin: right center;
+            animation: openLeft 1.6s ease-in-out forwards;
+        }
+
+        /* NỬA PHẢI */
+        .envelope-panel.right {
+            right: 0;
+            background-position: right center;
+            transform-origin: left center;
+            animation: openRight 1.6s ease-in-out forwards;
+        }
+
+
+        /* Animation mở */
+        @keyframes openLeft {
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes openRight {
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+
+        .heart {
+            display: inline-block;
+            margin: 0 14px;
+            color: #e25555;
+            font-size: 56px;
+            animation: heartbeat 1.2s infinite;
+            transform-origin: center;
+        }
+
+        .name-balance {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .name.left {
+            text-align: right;
+            padding-right: 16px;
+        }
+
+        .name.right {
+            text-align: left;
+            padding-left: 16px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* ===== FALLING HEART EFFECT ===== */
+        .falling-heart {
+            position: fixed;
+            top: -20px;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.95;
+            font-weight: bold;
+            /* 3D effect */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.35), 0 4px 6px rgba(0, 0, 0, 0.15);
+            animation: falling-heart linear forwards;
+        }
+
+        .heart-inner {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff4d4d, #ff1e56);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+
+
+        @keyframes falling-heart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* ===== CHÚNG TÔI CƯỚI - CỔ ĐIỂN ===== */
+        .classic-couple-section {
+            background: #fff;
+        }
+
+        #Our_Weeding,
+        #TimeLine {
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        .classic-cover {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-color: #fff6f1;
+        }
+
+        /* lớp nền phía sau */
+        .classic-cover::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            filter: blur(25px);
+            transform: scale(1.2);
+            opacity: 0.45;
+            z-index: -1;
+        }
+
+
+
+        .classic-card {
+            max-width: 820px;
+            margin: auto;
+            background: #ffffff;
+            padding: 60px 40px;
+        }
+
+        .flower-icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .flower-icon img {
+            width: 200px;
+            height: 300px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            transform: translateX(-12px);
+        }
+
+        .bomb-icon {
+            width: 80px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .chuhy_icon {
+            width: 100px;
+            opacity: 0.9;
+        }
+
+
+        .event_icon {
+            width: 200px;
+            opacity: 0.9;
+        }
+
+        .groom-icon {
+            width: 120px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .bride-icon {
+            width: 100px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .classic-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #8c6a4e;
+            margin-bottom: 30px;
+        }
+
+        .classic-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #a8743c;
+            font-weight: 500;
+        }
+
+        .classic-names span {
+            font-family: 'Great Vibes', cursive;
+            font-size: 58px;
+            margin: 0 12px;
+        }
+
+        /* THÔNG TIN */
+        .info {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #d4a373;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 20px;
+            background: #f3e6dc;
+            font-size: 14px;
+        }
+
+
+
+        .classic-divider {
+            width: 50%;
+            height: 1px;
+            background: #c9a26a;
+            margin: 20px auto;
+        }
+
+        .classic-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #8c6a4e;
+            letter-spacing: 2px;
+        }
+
+        /* Hiệu ứng từ dưới lên */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(100px);
+            animation: fadeUp 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .fade-up.delay-1 {
+            animation-delay: 0.4s;
+        }
+
+        .fade-up.delay-2 {
+            animation-delay: 0.8s;
+        }
+
+        .fade-up.delay-3 {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== TRÂN TRỌNG KÍNH MỜI ===== */
+        .invitation-section {
+            background: #fffaf7;
+            padding: 80px 20px;
+        }
+
+
+
+        .invitation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #e7a884;
+            margin-bottom: 20px;
+        }
+
+        .invitation-subtitle {
+            font-size: 18px;
+            color: #7a6a5c;
+        }
+
+        .invitation-content {
+            font-family: 'Playfair Display', serif;
+            color: #8c5a2b;
+        }
+
+        .invitation-date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .invitation-date-box {
+            border: 1px solid #c9a26a;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        .invitation-day {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .invitation-day span {
+            display: block;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            transform: translateY(-12px);
+            /* FIX CHUẨN */
+        }
+
+        .invitation-day::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 2px dashed #c9a26a;
+            border-radius: 12px;
+            animation: dash-rotate 10s linear infinite;
+        }
+
+        /* Animation */
+        @keyframes dash-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .invitation-address {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .invitation-flower {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 140px;
+            z-index: 5;
+            pointer-events: none;
+            background-color: #fffaf7;
+        }
+
+        .invitation-flower.left {
+            position: absolute;
+            top: 35%;
+            left: -70px;
+            /* ĐÈ RA NGOÀI */
+            transform: translateY(-50%);
+            width: 140px;
+            z-index: 5;
+            /* CAO HƠN VIỀN */
+            pointer-events: none;
+        }
+
+        .invitation-flower.right {
+            position: absolute;
+            top: 35%;
+            right: -70px;
+            transform: translateY(-50%) scaleX(-1);
+            width: 140px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .invitation-note {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #7a6a5c;
+        }
+
+        .invitation-actions {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .invitation-btn {
+            min-width: 240px;
+            padding: 14px 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #d4af74, #b48b4e);
+            color: #fff;
+            font-weight: 600;
+            transition: 0.25s;
+            background: #8c5a2b;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .invitation-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .invitation-btn.rsvp {
+            background: #d9966c;
+            color: #fff;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Trạng thái ban đầu */
+        .invitation-box {
+            opacity: 0;
+            transform: scale(0.96);
+            transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 40px 40px 40px;
+            position: relative;
+            background: #fffaf7;
+            overflow: visible;
+        }
+
+        .invitation-box.show:hover {
+            opacity: 0.9;
+            transform: translateY(-6px);
+        }
+
+
+        .invitation-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid #e7a884;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+
+        .invitation-box.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Hoa trái */
+        .invitation-flower.left {
+            opacity: 0;
+            transform: translateX(-120px);
+            transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Hoa phải */
+        .invitation-flower.right {
+            opacity: 0;
+            transform: translateX(120px);
+            transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .invitation-box.show .invitation-flower.left,
+        .invitation-box.show .invitation-flower.right {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .family-toggle {
+            display: flex;
+            width: 280px;
+            margin: 30px auto;
+            background: #eee;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 12px 0;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            cursor: pointer;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: #e7a884;
+            color: #fff;
+        }
+
+        /* CONTENT */
+        .family-content {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .family-box {
+            display: none;
+            animation: fade 0.4s ease;
+        }
+
+        .family-box.active {
+            display: block;
+        }
+
+        .family-box h3 {
+            letter-spacing: 2px;
+        }
+
+        .guest {
+            color: #8c6a4e;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            line-height: 1.8;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .names {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin: 20px 0;
+            color: #a8743c;
+        }
+
+        .title {
+            margin: 20px 0;
+        }
+
+        .red {
+            color: #c65b52;
+            font-weight: bold;
+        }
+
+        .location {
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+
+        .heart {
+            color: #e25555;
+        }
+
+        /* EFFECT */
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SECTION CHÚ RỂ ===== */
+        .groom-section {
+            background: #fffaf7;
+            padding: 100px 20px;
+        }
+
+        .groom-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        /* Ảnh chú rể */
+        .groom-image {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-150px);
+            transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .groom-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 22px;
+            /* bo góc mềm */
+            box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .groom-image img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        /* Nội dung */
+        .groom-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(150px);
+            transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .groom-content h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #c98b62;
+            margin-bottom: 10px;
+        }
+
+        .groom-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #8c5a2b;
+            margin-bottom: 20px;
+        }
+
+        .groom-divider {
+            width: 100%;
+            height: 1px;
+            background: #c9a26a;
+            margin-bottom: 25px;
+        }
+
+        .groom-content p {
+            font-size: 18px;
+            color: #6f5f54;
+            line-height: 1.8;
+        }
+
+        /* Khi hiện */
+        .groom-section.show .groom-image,
+        .groom-section.show .groom-content {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== SECTION CÔ DÂU ===== */
+        .bride-section {
+            background: #fffaf7;
+            padding: 100px 20px;
+        }
+
+        .bride-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-direction: row;
+        }
+
+        /* Nội dung */
+        .bride-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-150px);
+            transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .bride-content h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #c98b62;
+            margin-bottom: 10px;
+        }
+
+        .bride-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #8c5a2b;
+            margin-bottom: 20px;
+        }
+
+        .bride-divider {
+            width: 100%;
+            height: 1px;
+            background: #c9a26a;
+            margin-bottom: 25px;
+        }
+
+        .bride-content p {
+            font-size: 18px;
+            color: #6f5f54;
+            line-height: 1.8;
+        }
+
+        /* Ảnh */
+        .bride-image {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(150px);
+            transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .bride-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 22px;
+            /* bo góc mềm */
+            box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .bride-image img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        /* Khi hiện */
+        .bride-section.show .bride-content,
+        .bride-section.show .bride-image {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Album ảnh */
+        .wedding-album {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .album-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #9b5a2e;
+            margin-bottom: 40px;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .album-grid img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .album-grid img:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        /* chuyện chúng mình */
+        .our-story {
+            background: #faf6f3;
+            padding: 100px 20px;
+        }
+
+        .story-wrapper {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* TEXT */
+        .story-text {
+            background: #ffffff;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: #9b5a2e;
+            margin-bottom: 20px;
+        }
+
+        .story-line {
+            width: 100%;
+            height: 1px;
+            background: #9b5a2e;
+            margin: 0 auto 30px;
+        }
+
+        .story-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* IMAGE */
+        .story-image img {
+            width: 100%;
+            border-radius: 24px;
+            /* bo góc mềm */
+            box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .story-image img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        /* ANIMATION */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 0.9s ease;
+        }
+
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* time line day*/
+        .timeline-section {
+            padding: 120px 20px;
+            background: #fff;
+            position: relative;
+            text-align: center;
+        }
+
+        .timeline-icon {
+            font-size: 42px;
+            color: #e0a57c;
+            margin-bottom: 40px;
+        }
+
+        .timeline-date {
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #e0a57c;
+            margin-bottom: 80px;
+        }
+
+        /* GRID */
+        .timeline-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            align-items: center;
+        }
+
+        /* IMAGE */
+        .timeline-image img {
+            width: 100%;
+            border-radius: 24px;
+            /* bo góc mềm */
+            box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .timeline-image img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        /* LINE */
+        .timeline-line {
+            position: relative;
+            height: 100%;
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: #e0a57c;
+            transform: translateX(-50%);
+        }
+
+        .timeline-line .dot {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: #e0a57c;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* CONTENT */
+        .timeline-content {
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            color: #9b5a2e;
+            margin-bottom: 16px;
+        }
+
+        .content-line {
+            width: 50%;
+            height: 1px;
+            background: #9b5a2e;
+            margin-bottom: 24px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 0.9s ease;
+        }
+
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-container.reverse {
+            grid-template-columns: 1fr 60px 1fr;
+        }
+
+        .timeline-container.reverse .timeline-content {
+            grid-column: 1;
+            text-align: right;
+            padding-right: 40px;
+            padding-left: 0;
+        }
+
+        .timeline-container.reverse .timeline-image {
+            grid-column: 3;
+        }
+
+        .timeline-container.reverse .content-line {
+            margin-left: auto;
+        }
+
+        /* envemt */
+        .event-section {
+            background: #faf6f3;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            color: #9b5a2e;
+            margin-bottom: 80px;
+        }
+
+        .event-list {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .event-item {
+            padding: 20px;
+        }
+
+        .event-icon {
+            font-size: 60px;
+            color: #e0a57c;
+            margin-bottom: 20px;
+        }
+
+        .event-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #9b5a2e;
+            margin-bottom: 12px;
+        }
+
+        .event-line {
+            width: 140px;
+            height: 1px;
+            background: #9b5a2e;
+            margin: 0 auto 24px;
+        }
+
+        .event-address {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .event-time {
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .event-btns {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-outline {
+            padding: 10px 20px;
+            border: 1px solid #9b5a2e;
+            color: #9b5a2e;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-outline:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-fill {
+            padding: 10px 20px;
+            background: #d8a07a;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* ===== SỔ LƯU BÚT ===== */
+        .guestbook-section {
+            padding: 40px 15px;
+            background: #f5f5f5;
+        }
+
+        .guestbook-box {
+            max-width: 720px;
+            margin: auto;
+            padding: 80px 150px;
+            background: #ffffff;
+            border: 1px solid #e7a884;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .guestbook-box:hover {
+            opacity: 0.9;
+            transform: translateY(-6px);
+        }
+
+        .form-group>label {
+            display: block;
+            color: #6f5f54;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .form-group {
+            text-align: left;
+            width: 100%;
+        }
+
+        /* Ảnh LOVE */
+        .guestbook-love {
+            max-width: 100px;
+            text-align: center;
+            margin: 0 auto 40px;
+        }
+
+        .guestbook-love img {
+            width: 100%;
+        }
+
+        /* Tiêu đề */
+        .guestbook-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #9b5a2e;
+            margin-bottom: 40px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            max-width: 100%;
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            transition: 0.25s;
+            outline: none;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #caa46a;
+            box-shadow: 0 0 0 2px rgba(202, 164, 106, 0.15);
+        }
+
+        /* ===== RADIO + CHECKBOX ===== */
+
+        .option {
+            display: flex;
+            gap: 24px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .option label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #6f5f54;
+        }
+
+        .option input {
+            accent-color: #caa46a;
+        }
+
+        /* ===== BUTTON ===== */
+
+        .guestbook-box button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #d4af74, #b48b4e);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .guestbook-box button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* ===== HỘP MỪNG CƯỚI ===== */
+        .gift-section {
+            background: #fffaf7;
+            padding: 120px 20px;
+        }
+
+        .gift-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* KHUNG TRÁI */
+        .gift-box {
+            background: #ffffff;
+            padding: 70px 60px;
+            border: 1px solid #e7a884;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateX(-120px);
+            transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .gift-box.show:hover {
+            opacity: 0.9;
+            transform: translateY(-6px);
+        }
+
+        .gift-box.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .gift-icon {
+            width: 70px;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .gift-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #9b5a2e;
+            margin-bottom: 20px;
+        }
+
+        .gift-desc {
+            font-size: 16px;
+            color: #6f5f54;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* QR */
+        .gift-qr {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .gift-qr-item {
+            text-align: center;
+        }
+
+        .gift-qr-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .gift-qr-item p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .gift-qr-item img {
+            width: 120px;
+            margin-top: 10px;
+        }
+
+        /* ẢNH PHẢI */
+        .gift-image {
+            opacity: 0;
+            transform: translateX(120px);
+            transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gift-image.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .gift-image.show:hover {
+            transform: scale(1.03);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            /* bo góc mềm */
+            box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: #e7a884;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .option {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .option label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+
+            /* ===== GLOBAL ===== */
+            h2 {
+                font-size: 26px;
+            }
+
+            .classic-names {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .classic-names .name {
+                font-size: 34px;
+                text-align: center;
+            }
+
+            .classic-names .heart {
+                font-size: 28px;
+                margin: 6px 0;
+            }
+
+            .flower-icon img {
+                width: 100%;
+                max-width: 100px;
+                height: auto;
+                margin: 20px 0px 20px 30px;
+                display: block;
+            }
+
+            /* ===== TÊN CÔ DÂU CHÚ RỂ ===== */
+            .names {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                font-size: 26px;
+                line-height: 1.2;
+                margin: 24px 0;
+                text-align: center;
+                position: relative;
+                z-index: 5;
+            }
+
+            .names span {
+                display: block;
+            }
+
+            .names .and {
+                font-size: 22px;
+                color: #c97a6a;
+            }
+
+            /* ===== INVITATION BOX ===== */
+            .invitation-box {
+                padding: 50px 20px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .invitation-box *:not(.invitation-flower) {
+                position: relative;
+                z-index: 5;
+            }
+
+            .invitation-title {
+                font-size: 28px;
+            }
+
+            .invitation-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .invitation-date {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .invitation-date-box {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .invitation-day {
+                width: 90px;
+                height: 90px;
+            }
+
+            .invitation-day span {
+                font-size: 48px;
+                transform: translateY(-8px);
+            }
+
+            .invitation-address {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+
+            /* HOA */
+            .invitation-flower {
+                width: 100px;
+                position: absolute;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .invitation-flower.left {
+                left: -60px;
+                top: 40%;
+            }
+
+            .invitation-flower.right {
+                right: -60px;
+                top: 40%;
+            }
+
+            /* ===== BUTTON ===== */
+            .invitation-actions {
+                gap: 16px;
+            }
+
+            .invitation-btn {
+                min-width: 100%;
+            }
+
+            .countdown {
+                font-size: 18px;
+                margin-top: 20px;
+                font-weight: bold;
+            }
+
+            /* ===== GROOM / BRIDE ===== */
+            .groom-container,
+            .bride-container {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .groom-content,
+            .bride-content {
+                transform: translateY(60px);
+            }
+
+            .groom-section.show .groom-content,
+            .bride-section.show .bride-content {
+                transform: translateY(0);
+            }
+
+            /* ===== ALBUM ===== */
+            .album-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .album-grid img {
+                height: auto !important;
+                /* không ép chiều cao */
+                object-fit: contain !important;
+                /* không cắt ảnh */
+                background: #fff6f1;
+            }
+
+            /* ===== STORY ===== */
+            .story-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-text {
+                padding: 40px 20px;
+            }
+
+            /* tiêu đề */
+            .story-text h3 {
+                margin-top: 0;
+                position: relative;
+                z-index: 2;
+            }
+
+            #first-trip {
+                transform: none !important;
+                padding-left: 0 !important;
+                margin-left: 30px !important;
+            }
+
+            #first-trip h3 {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 12px;
+                text-align: center;
+            }
+
+            #first-trip img {
+                display: block;
+                margin: 0 auto;
+            }
+
+            /* ===== TIMELINE ===== */
+            .timeline-container,
+            .timeline-container.reverse {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center;
+                gap: 28px;
+            }
+
+            /* ẩn đường timeline */
+            .timeline-line {
+                display: none;
+            }
+
+            /* nội dung */
+            .timeline-content {
+                text-align: center;
+                padding: 0;
+                width: 100%;
+            }
+
+            /* ảnh */
+            .timeline-image {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .timeline-image img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+            }
+
+            /* tắt animation mobile */
+            .scroll-animate {
+                transform: none !important;
+                opacity: 1 !important;
+            }
+
+            /* gạch trang trí */
+            .content-line {
+                margin: 0 auto 24px;
+            }
+
+            /* ===== EVENT ===== */
+            .event-list {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            /* ===== GIFT ===== */
+            .gift-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .gift-box {
+                padding: 40px 20px;
+            }
+
+            /* ===== GUESTBOOK ===== */
+            .guestbook-box {
+                padding: 50px 20px;
+            }
+
+            .music-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 12px 18px;
+                font-size: 15px;
+            }
+
+            .option {
+                gap: 12px;
+            }
+
+            .option label {
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .option input {
+                flex-shrink: 0;
+                width: 18px;
+                height: 18px;
+                margin: 0;
+            }
+
+            .form-group select {
+                width: 100%;
+                font-size: 16px;
+                /* ⚠️ BẮT BUỘC cho iPhone */
+                padding: 13px 16px;
+                border-radius: 12px;
+                border: 1px solid #ddd;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23999' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 14px center;
+                background-size: 16px;
+                transition: 0.25s;
+                outline: none;
+                background: #fff;
+            }
+
+            .countdown-title {
+                position: relative;
+                text-align: center;
+                font-size: 26px;
+                line-height: normal;
+                /* ⚠️ rất quan trọng */
+            }
+
+            .countdown-title .bomb {
+                position: relative;
+                top: 2px;
+                /* 👈 FIX Safari iOS */
+                display: inline-block;
+            }
+
+            .countdown-title img {
+                width: 22px;
+                height: auto;
+                /* ❌ KHÔNG set height */
+                vertical-align: middle;
+            }
+
+            .countdown-title .text {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+
+            /*.bomb-icon {
+                width: 40px;
+                height: 40px;
+                opacity: 0.9;
+                margin-bottom: 20px;
+                display: block;
+            }*/
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="red-envelope">
+        <div class="envelope-panel left"></div>
+        <div class="envelope-panel right"></div>
+    </div>
+
+    <!-- Nhạc nền -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/music/YEHMN.mp3" )
+            type="audio/mpeg">
+    </audio>
+    <button id="music-btn" class="music-btn">
+        🔇
+    </button>
+
+    <!-- CHÚNG TÔI CƯỚI -->
+    <section class="classic-couple-section">
+        <div class="classic-cover"></div>
+
+        <div class="classic-card">
+
+            <div class="flower-icon fade-up">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picturecoming.webp"
+                    alt="Ảnh cô dâu chú rể">
+            </div>
+
+            <div class="classic-subtitle fade-up delay-1" id="Our_Weeding">
+                Our Wedding
+            </div>
+
+            <div class="classic-names fade-up delay-2 name-balance">
+                <span class="name left">Đức Linh</span>
+                <span class="heart">❤</span>
+                <span class="name left">Nguyễn Tho</span>
+            </div>
+
+            <div class="classic-divider fade-up delay-3"></div>
+
+            <div class="classic-date fade-up delay-3" id="TimeLine">
+                05 · 04 · 2026
+            </div>
+
+        </div>
+
+    </section>
+    <!--===== TRÂN TRỌNG KÍNH MỜI -->
+    <section class="invitation-section">
+        <div class="invitation-box">
+            <img class="invitation-flower left" loading="lazy" decoding="async"
+                src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture2.webp"
+                alt="Hoa trái">
+
+            <img class="invitation-flower right" loading="lazy" decoding="async"
+                src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture3.webp"
+                alt="Hoa phải">
+            <!-- TOGGLE BUTTON -->
+            <div class="family-toggle">
+                <button class="toggle-btn active" data-target="nha-trai">NHÀ TRAI</button>
+                <button class="toggle-btn" data-target="nha-gai">NHÀ GÁI</button>
+            </div>
+            <div class="invitation-title">Trân trọng kính mời!</div>
+            <p class="guest">Quý khách</p>
+            <div class="invitation-subtitle">
+                Tới dự bữa tiệc Thân Mật & tiệc Lễ Vu Quy
+                chung vui cùng gia đình chúng tôi
+            </div>
+            <div class="family-content">
+                <!-- NHÀ TRAI -->
+                <div id="nha-trai" class="family-box active">
+                    <h2 class="names">
+                        <span>Đức Linh</span>
+                        <span class="and">&</span>
+                        <span>Nguyễn Tho</span>
+                    </h2>
+
+                    <h4 class="title red">TIỆC THÂN MẬT NHÀ TRAI</h4>
+
+                    <p>Tổ chức vào lúc <strong>17 giờ 00 phút</strong></p>
+                    <p class="red">Thứ Bảy, ngày 04 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 17 tháng 2 năm Bính Ngọ)</p>
+                    <div class="classic-divider fade-up delay-3"></div>
+                    <p>Tổ chức vào lúc <strong>09 giờ 00 phút</strong></p>
+                    <p class="red">Chủ Nhật, ngày 05 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 18 tháng 2 năm Bính Ngọ)</p>
+
+                    <p class="location">
+                        Tại: <strong>Tư Gia nhà Trai</strong><br>
+                        Thôn Cung Thuế, Kim Đường, Hà Nội
+                    </p>
+                    <img class="chuhy_icon" loading="lazy" decoding="async"
+                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/ChuHy.webp"
+                        alt="Chữ hỷ">
+                    <h4 class="title red">LỄ THÀNH HÔN</h4>
+                    <p>Tổ chức vào lúc <strong>15 giờ 00 phút</strong></p>
+                    <p class="red">Chủ Nhật, ngày 05 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 18 tháng 2 năm Bính Ngọ)</p>
+                    <p class="location">
+                        Tại: <strong>Tư Gia nhà Trai</strong><br>
+                        Thôn Cung Thuế, Kim Đường, Hà Nội
+                    </p>
+                    <div class="invitation-content">
+                        <div class="invitation-date">
+                            <div class="invitation-date-box">15:00, Chủ nhật</div>
+                            <div class="invitation-day"><span>05</span></div>
+                            <div class="invitation-date-box">Tháng 04, 2026</div>
+                        </div>
+
+                        <div class="invitation-address">
+                            Số 01, ngõ 2,xóm Máng, thôn Cung Thuế, xã Ứng Hòa, TP.Hà Nội
+                        </div>
+                        <!-- ĐẾM NGƯỢC -->
+                        <section>
+                            <h2>
+                                <span class="icon-wrap">
+                                    <img class="bomb-icon" loading="lazy" decoding="async"
+                                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture4.webp"
+                                        alt="Bom">
+                                </span>
+
+                                <span>Đếm ngược</span>
+                            </h2>
+                            <div class="countdown" data-time="2026-04-05T15:00:00"></div>
+                        </section>
+                        <div class="invitation-note">
+                            Sự hiện diện của bạn là niềm vinh dự của chúng tôi!
+                        </div>
+
+                    </div>
+                    <div class="invitation-actions">
+                        <a href="#guestbook" class="invitation-btn wish">
+                            SỔ LƯU BÚT
+                        </a>
+                        <a href="https://maps.app.goo.gl/jLwG2mZ5uS9A4Zad9" target="_blank" class="invitation-btn rsvp">
+                            CHỈ ĐƯỜNG
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NHÀ GÁI -->
+                <div id="nha-gai" class="family-box">
+
+                    <h2 class="names">
+                        <span>Nguyễn Tho</span>
+                        <span class="and">&</span>
+                        <span>Đức Linh</span>
+                    </h2>
+
+                    <h4 class="title red">TIỆC THÂN MẬT NHÀ GÁI</h4>
+
+                    <p>Tổ chức vào lúc <strong>17 giờ 00 phút</strong></p>
+                    <p class="red">Thứ Bảy, ngày 04 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 17 tháng 2 năm Bính Ngọ)</p>
+                    <div class="classic-divider fade-up delay-3"></div>
+                    <p>Tổ chức vào lúc <strong>09 giờ 00 phút</strong></p>
+                    <p class="red">Chủ Nhật, ngày 05 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 18 tháng 2 năm Bính Ngọ)</p>
+
+                    <p class="location">
+                        Tại: <strong>Tư Gia nhà Gái</strong><br>
+                        Thôn Chi Nê, Phú Nghĩa, Hà Nội
+                    </p>
+                    <img class="chuhy_icon" loading="lazy" decoding="async"
+                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/ChuHy.webp"
+                        alt="Chữ hỷ">
+                    <h4 class="title red">LỄ VU QUY</h4>
+                    <p>Tổ chức vào lúc <strong>13 giờ 00 phút</strong></p>
+                    <p class="red">Chủ Nhật, ngày 05 tháng 04 năm 2026</p>
+                    <p>(Tức ngày 18 tháng 2 năm Bính Ngọ)</p>
+                    <p class="location">
+                        Tại: <strong>Tư Gia nhà Gái</strong><br>
+                        Thôn Chi Nê, Phú Nghĩa, Hà Nội
+                    </p>
+                    <div class="invitation-content">
+                        <div class="invitation-date">
+                            <div class="invitation-date-box">13:00, Chủ nhật</div>
+                            <div class="invitation-day"><span>05</span></div>
+                            <div class="invitation-date-box">Tháng 04, 2026</div>
+                        </div>
+
+                        <div class="invitation-address">
+                            Thôn Chi Nê, Phú Nghĩa, Hà Nội
+                        </div>
+
+                        <!-- ĐẾM NGƯỢC -->
+                        <section>
+                            <h2>
+                                <img class="bomb-icon" loading="lazy" decoding="async"
+                                    src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture4.webp"
+                                    alt="Bom"> Đếm ngược
+                            </h2>
+                            <div class="countdown" data-time="2026-04-05T13:00:00"></div>
+                        </section>
+                        <div class="invitation-note">
+                            Sự hiện diện của bạn là niềm vinh dự của chúng tôi!
+                        </div>
+                    </div>
+
+                    <div class="invitation-actions">
+                        <a href="#guestbook" class="invitation-btn wish">
+                            SỔ LƯU BÚT
+                        </a>
+                        <a href="https://maps.app.goo.gl/ACVinFU7VKL1tm6j6" target="_blank" class="invitation-btn rsvp">
+                            CHỈ ĐƯỜNG
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- chú rể -->
+    <section class="groom-section">
+        <div class="groom-container">
+
+            <!-- Ảnh -->
+            <div class="groom-image">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02731.webp"
+                    loading="lazy" decoding="async" alt="Chú rể">
+            </div>
+
+            <!-- Nội dung -->
+            <div class="groom-content">
+                <div>
+                    <img class="groom-icon" loading="lazy" decoding="async"
+                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture5.webp"
+                        alt="chú rể icon">
+                </div>
+                <h4>CHÚ RỂ</h4>
+                <h2>Đức Linh</h2>
+                <div class="groom-divider"></div>
+                <p>
+                    Mỗi lời chúc phúc và sự hiện diện của bạn trong ngày đặc biệt
+                    này chính là món quà vô giá với chúng tôi. Hãy cùng chúng tôi
+                    tận hưởng niềm vui, tiếng cười và sự ấm áp trong ngày hạnh phúc
+                    nhất này!
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!-- cô dâu -->
+    <section class="bride-section">
+        <div class="bride-container">
+
+            <!-- Nội dung -->
+            <div class="bride-content">
+                <div>
+                    <img class="bride-icon" loading="lazy" decoding="async"
+                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picturebride.webp"
+                        alt="cô dâu icon">
+                </div>
+                <h4>CÔ DÂU</h4>
+                <h2>Nguyễn Tho</h2>
+                <div class="bride-divider"></div>
+                <p>
+                    Hành trình yêu thương của chúng tôi được viết nên từ sự đồng hành
+                    và chúc phúc của những người thân yêu. Xin cảm ơn vì đã đến,
+                    đã mỉm cười và cùng chúng tôi lưu giữ khoảnh khắc thiêng liêng và
+                    hạnh phúc này!
+                </p>
+            </div>
+
+            <!-- Ảnh -->
+            <div class="bride-image">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03177.webp"
+                    loading="lazy" decoding="async" alt="Cô dâu">
+            </div>
+
+        </div>
+    </section>
+    <!-- Album ảnh -->
+    <section class="wedding-album">
+        <h2 class="album-title">Album ảnh cưới</h2>
+
+        <div class="album-grid">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02460.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 1">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02910.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 2">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03055.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 3">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03122.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 4">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03173.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 5">
+            <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM01867.webp"
+                loading="lazy" decoding="async" alt="Ảnh cưới 6">
+        </div>
+    </section>
+    <!-- Chuyện chúng mình -->
+    <section class="our-story scroll-section">
+        <div class="story-wrapper">
+
+            <div class="story-text scroll-animate">
+                <div class="story-icon">
+                    <img class="groom-icon" loading="lazy" decoding="async"
+                        src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/pitcture9.webp"
+                        alt="chuyện chúng mình icon">
+                </div>
+                <h2>Chuyện chúng mình</h2>
+                <div class="story-line"></div>
+                <p>
+                    Chúng tôi rất vui mừng được chia sẻ khoảnh khắc quan trọng nhất của cuộc đời mình
+                    với gia đình, bạn bè và những người thân yêu. Ngày cưới không chỉ là sự khởi đầu
+                    của hành trình mới mà còn là dịp để chúng ta cùng nhau tạo nên những kỷ niệm đáng nhớ.
+                </p>
+            </div>
+
+            <div class="story-image scroll-animate">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02852.webp"
+                    loading="lazy" decoding="async" alt="Chuyện chúng mình">
+            </div>
+
+        </div>
+    </section>
+    <!-- NGÀY 18 - 09 - 2023 -->
+    <section class="timeline-section">
+        <div class="timeline-icon">
+            <img class="groom-icon" loading="lazy" decoding="async"
+                src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture10.webp"
+                alt="chuyện chúng mình icon">
+        </div>
+
+        <div class="timeline-date scroll-animate">
+            NGÀY 07 - 11 - 2023
+        </div>
+
+        <div class="timeline-container">
+
+            <div class="timeline-image scroll-animate">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03311.webp"
+                    loading="lazy" decoding="async" alt="Lần đầu gặp nhau">
+            </div>
+
+            <div class="timeline-line">
+                <span class="dot"></span>
+            </div>
+
+            <div class="timeline-content scroll-animate">
+                <h3>
+                    Lần đầu gặp nhau
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
+                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                </h3>
+                <div class="content-line"></div>
+                <p>
+                    Chúng tôi gặp nhau trong một khoảnh khắc rất bình thường, nhưng lại mở ra một hành trình rất đặc
+                    biệt!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-date scroll-animate">
+            NGÀY 29 - 12 - 2024
+        </div>
+
+        <div class="timeline-container reverse">
+
+
+            <div class="timeline-content scroll-animate" id="first-trip">
+                <h3>
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
+                        loading="lazy" decoding="async" alt="Chuyến đi đầu tiên" class="event_icon">
+                    Chuyến đi đầu tiên
+                </h3>
+                <div class="content-line"></div>
+                <p>
+                    Chuyến đi đầu tiên không quá dài, nhưng đủ để chúng tôi hiểu rằng: đi cùng nhau quan trọng hơn là đi
+                    đến đâu!
+                </p>
+            </div>
+
+            <div class="timeline-line">
+                <span class="dot"></span>
+            </div>
+
+            <div class="timeline-image scroll-animate">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03339.webp"
+                    loading="lazy" decoding="async" alt="Chuyến đi đầu tiên">
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-date scroll-animate">
+            NGÀY 11 - 05 - 2025
+        </div>
+
+        <div class="timeline-container">
+
+            <div class="timeline-image scroll-animate">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03698.webp"
+                    loading="lazy" decoding="async" alt="Kỷ niệm đáng nhớ">
+            </div>
+
+            <div class="timeline-line">
+                <span class="dot"></span>
+            </div>
+
+            <div class="timeline-content scroll-animate">
+                <h3>
+                    Kỷ niệm đáng nhớ
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
+                        loading="lazy" decoding="async" alt="Kỷ niệm đáng nhớ" class="event_icon">
+                </h3>
+                <div class="content-line"></div>
+                <p>
+                    Giữa những điều bình dị của cuộc sống, chúng tôi đã cùng nhau tạo nên những kỷ niệm nhỏ bé nhưng đủ
+                    để nhớ mãi!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="event-section">
+        <h2 class="event-title scroll-animate">Sự kiện</h2>
+
+        <div class="event-list">
+
+            <!-- ĂN HỎI -->
+            <div class="event-item scroll-animate">
+                <div class="event-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture12.webp"
+                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                </div>
+                <h3>Ăn hỏi</h3>
+                <div class="event-line"></div>
+                <p class="event-address">
+                    Thôn Chi Nê, Phú Nghĩa, Hà Nội
+                </p>
+                <p class="event-time">09:00 04/04/2026</p>
+
+
+
+            </div>
+
+            <!-- ĐÓN DÂU -->
+            <div class="event-item scroll-animate">
+                <div class="event-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture13.webp"
+                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                </div>
+                <h3>Đón dâu</h3>
+                <div class="event-line"></div>
+                <p class="event-address">
+                    Thôn Chi Nê, Phú Nghĩa, Hà Nội
+                </p>
+                <p class="event-time">13:00 05/04/2026</p>
+
+            </div>
+
+            <!-- TIỆC CƯỚI -->
+            <div class="event-item scroll-animate">
+                <div class="event-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture14.webp"
+                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                </div>
+                <h3>Tiệc cưới</h3>
+                <div class="event-line"></div>
+                <p class="event-address">
+                    Thôn Cung Thuế, Ứng Hòa, Hà Nội
+                </p>
+                <p class="event-time">15:00 05/04/2026</p>
+
+            </div>
+
+        </div>
+    </section>
+    <!--Sổ lưu bút-->
+    <form class="guestbook-section" id="guestbook">
+        <div class="guestbook-box scroll-animate">
+
+            <div class="guestbook-love">
+                <img class="homthu-icon"
+                    src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/homthu.webp"
+                    loading="lazy" decoding="async" alt="love">
+            </div>
+
+            <div class="guestbook-title">
+                Sổ lưu bút
+            </div>
+
+            <div class="form-group">
+                <label>Họ tên của bạn</label>
+                <input type="text" name="fullname" placeholder="Nhập họ tên" />
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="tel" name="phone" placeholder="Nhập số điện thoại" />
+            </div>
+
+            <div class="form-group">
+                <label>Bạn sẽ tham gia chứ?</label>
+                <div class="option">
+                    <label><input type="radio" name="join" value="Có"> Có, tôi sẽ tham gia</label>
+                    <label><input type="radio" name="join" value="Không"> Xin lỗi, tôi bận mất rồi</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Bạn là khách mời của ai?</label>
+                <div class="option">
+                    <label><input type="checkbox" name="guestOf" value="Cô Dâu"> Cô Dâu</label>
+                    <label><input type="checkbox" name="guestOf" value="Cô Dâu"> Chú Rể</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Bạn sẽ tham gia bữa tiệc nào?</label>
+                <select name="party">
+                    <option value="Nhà gái">Tiệc nhà gái</option>
+                    <option value="Nhà trai">Tiệc nhà trai</option>
+                    <option value="Cả hai">Cả hai</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Bạn đi bao nhiêu người?</label>
+                <select name="people">
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gửi lời chúc mừng cho cô dâu chú rể</label>
+                <textarea name="message" placeholder="Nhập lời chúc của bạn (tối đa 3000 ký tự) *"></textarea>
+            </div>
+            <button type="submit">Phản hồi</button>
+
+        </div>
+    </form>
+
+    <section class="gift-section">
+        <div class="gift-container">
+
+            <!-- TRÁI -->
+            <div class="gift-box">
+                <img class="gift-icon"
+                    src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture16.webp"
+                    loading="lazy" decoding="async" alt="Icon">
+
+                <div class="gift-title">Hộp mừng cưới</div>
+
+                <div class="gift-desc">
+                    Nếu có thể, bạn hãy tới tham dự Đám cưới, chung vui và Mừng
+                    cưới trực tiếp cho chúng mình nhé ^^.
+                    <br>Cảm ơn bạn rất nhiều!
+                </div>
+
+                <div class="gift-qr">
+                    <div class="gift-qr-item">
+                        <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture8-Photoroom.webp"
+                            loading="lazy" decoding="async" alt="QR cô dâu">
+                        <h4>Mừng cưới đến cô dâu</h4>
+                        <p>Ngân hàng Techcombank</p>
+                        <p>1903 5609 7380 13</p>
+                        <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_codau.webp"
+                            loading="lazy" decoding="async" alt="QR cô dâu">
+                    </div>
+
+                    <div class="gift-qr-item">
+                        <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture7-Photoroom.webp"
+                            loading="lazy" decoding="async" alt="QR chú rể">
+                        <h4>Mừng cưới đến chú rể</h4>
+                        <p>Ngân hàng Techcombank</p>
+                        <p>1903 6462 5720 13</p>
+                        <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_chure.webp"
+                            loading="lazy" decoding="async" alt="QR chú rể">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHẢI -->
+            <div class="gift-image">
+                <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03000.webp"
+                    loading="lazy" decoding="async" alt="Cô dâu chú rể">
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        © 2026 Linh & Tho · Trân trọng cảm ơn
+    </footer>
+    <script>
+        document.getElementById("guestbook").addEventListener("submit", function (e) {
+            e.preventDefault();
+            console.log("hello");
+
+            fetch("https://script.google.com/macros/s/AKfycbwQNc18uc95u-QzgtmwER3UAFmAXzAHL_2RFkesjoLOrpGBrWdvW77IE3nlVDrM64F7Sg/exec", {
+                method: "POST",
+                body: new FormData(this)
+            })
+                .then(() => alert("Đã gửi lời chúc 💖"));
+        });
+    </script>
+    <!-- SCRIPT SLIDE -->
+    <script>
+        const images = [
+            "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02937.webp",
+            "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02052.webp",
+            "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02494.webp",
+            "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02869.webp"
+        ];
+
+        let index = 0;
+        const cover = document.querySelector(".classic-cover");
+
+        cover.style.backgroundImage = `url(${images[0]})`;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            cover.style.backgroundImage = `url(${images[index]})`;
+        }, 4000);
+    </script>
+
+    <!-- SCRIPT ĐẾM NGƯỢC -->
+    <script>
+        document.querySelectorAll('.countdown').forEach(el => {
+
+            const targetTime = new Date(el.dataset.time).getTime();
+
+            setInterval(() => {
+                const now = Date.now();
+                const distance = targetTime - now;
+
+                if (distance <= 0) {
+                    el.innerHTML = "💖 Đã đến ngày cưới!";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((distance / (1000 * 60)) % 60);
+                const seconds = Math.floor((distance / 1000) % 60);
+
+                el.innerHTML =
+                    `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+            }, 1000);
+
+        });
+    </script>
+    <!-- Script này giúp khi scroll tới section mới chạy -->
+    <script>
+        const invitationBox = document.querySelector('.invitation-box');
+
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        invitationBox.classList.add('show');
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        observer.observe(invitationBox);
+    </script>
+    <!-- chú rể-->
+    <script>
+        const groomSection = document.querySelector('.groom-section');
+
+        const groomObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        groomSection.classList.add('show');
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        groomObserver.observe(groomSection);
+    </script>
+    <!-- cô dâu-->
+    <script>
+        const brideSection = document.querySelector('.bride-section');
+
+        const brideObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        brideSection.classList.add('show');
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        brideObserver.observe(brideSection);
+    </script>
+    <!-- chuyện chúng mình-->
+    <script>
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+
+        const elementInView = (el, offset = 100) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return elementTop <= (window.innerHeight - offset);
+        };
+
+        const displayScrollElement = (el) => {
+            el.classList.add('active');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScrollAnimation);
+    </script>
+    <!-- time line day 1-->
+    <script>
+        const scrollItems = document.querySelectorAll('.scroll-animate');
+
+        const showOnScroll = () => {
+            scrollItems.forEach(item => {
+                const top = item.getBoundingClientRect().top;
+                if (top < window.innerHeight - 120) {
+                    item.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', showOnScroll);
+    </script>
+
+    <script>
+        const giftBox = document.querySelector('.gift-box');
+        const giftImage = document.querySelector('.gift-image');
+
+        const giftObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        giftBox.classList.add('show');
+                        giftImage.classList.add('show');
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        giftObserver.observe(giftBox);
+    </script>
+    <script>
+        const buttons = document.querySelectorAll('.toggle-btn');
+        const boxes = document.querySelectorAll('.family-box');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                // remove active
+                buttons.forEach(b => b.classList.remove('active'));
+                boxes.forEach(box => box.classList.remove('active'));
+
+                // add active
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        const music = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+
+        let isPlaying = false;
+
+        btn.addEventListener('click', () => {
+            if (!isPlaying) {
+                music.play();
+                btn.innerHTML = '🎵';
+            } else {
+                music.pause();
+                btn.innerHTML = '🔇';
+            }
+            isPlaying = !isPlaying;
+        });
+
+
+
+    </script>
+    <script>
+        function createFallingHeart() {
+            const el = document.createElement('div');
+            el.className = 'falling-heart';
+
+            const colors = ['#ff1e56', '#f4a3b4']; // đỏ + hồng nhạt
+
+            el.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+            el.innerHTML = '<span class="heart-inner">❤</span>';
+
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (14 + Math.random() * 16) + 'px';
+            el.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+            document.body.appendChild(el);
+
+            setTimeout(() => {
+                el.remove();
+            }, 9000);
+        }
+
+        // Tạo tim mỗi 300ms
+        setInterval(createFallingHeart, 300);
+    </script>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('red-envelope')?.remove();
+            }, 1700);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
