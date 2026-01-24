@@ -966,7 +966,10 @@
         /* IMAGE */
         .timeline-image img {
             width: 100%;
+            aspect-ratio: 9 / 16;
             border-radius: 24px;
+            object-fit: cover;      /* 🔥 quan trọng */
+            object-position: center;
             /* bo góc mềm */
             box-shadow: 0 18px 45px rgba(231, 168, 132, 0.35);
             transition: transform 0.6s ease, box-shadow 0.6s ease;
@@ -1700,9 +1703,11 @@
 
             .timeline-image img {
                 width: 100%;
-                height: auto;
                 display: block;
-                object-fit: contain;
+                aspect-ratio: 9 / 16;
+                border-radius: 24px;
+                object-fit: cover;      /* 🔥 quan trọng */
+                object-position: center;
             }
 
             /* tắt animation mobile */
@@ -1866,7 +1871,7 @@
 
     <!-- Nhạc nền -->
     <audio id="bg-music" loop>
-        <source src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/music/YEHMN.mp3" )
+        <source src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/music/YEHMN.mp3"
             type="audio/mpeg">
     </audio>
     <button id="music-btn" class="music-btn">
@@ -1906,11 +1911,11 @@
     <!--===== TRÂN TRỌNG KÍNH MỜI -->
     <section class="invitation-section">
         <div class="invitation-box">
-            <img class="invitation-flower left" loading="lazy" decoding="async"
+            <img class="invitation-flower left"
                 src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture2.webp"
                 alt="Hoa trái">
 
-            <img class="invitation-flower right" loading="lazy" decoding="async"
+            <img class="invitation-flower right"
                 src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture3.webp"
                 alt="Hoa phải">
             <!-- TOGGLE BUTTON -->
@@ -1947,7 +1952,7 @@
                         Tại: <strong>Tư Gia nhà Trai</strong><br>
                         Thôn Cung Thuế, Kim Đường, Hà Nội
                     </p>
-                    <img class="chuhy_icon" loading="lazy" decoding="async"
+                    <img class="chuhy_icon"
                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/ChuHy.webp"
                         alt="Chữ hỷ">
                     <h4 class="title red">LỄ THÀNH HÔN</h4>
@@ -1972,7 +1977,7 @@
                         <section>
                             <h2>
                                 <span class="icon-wrap">
-                                    <img class="bomb-icon" loading="lazy" decoding="async"
+                                    <img class="bomb-icon"
                                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture4.webp"
                                         alt="Bom">
                                 </span>
@@ -2019,7 +2024,7 @@
                         Tại: <strong>Tư Gia nhà Gái</strong><br>
                         Thôn Chi Nê, Phú Nghĩa, Hà Nội
                     </p>
-                    <img class="chuhy_icon" loading="lazy" decoding="async"
+                    <img class="chuhy_icon"
                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/ChuHy.webp"
                         alt="Chữ hỷ">
                     <h4 class="title red">LỄ VU QUY</h4>
@@ -2044,7 +2049,7 @@
                         <!-- ĐẾM NGƯỢC -->
                         <section>
                             <h2>
-                                <img class="bomb-icon" loading="lazy" decoding="async"
+                                <img class="bomb-icon"
                                     src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture4.webp"
                                     alt="Bom"> Đếm ngược
                             </h2>
@@ -2080,13 +2085,13 @@
             <!-- Ảnh -->
             <div class="groom-image">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02731.webp"
-                    loading="lazy" decoding="async" alt="Chú rể">
+                     alt="Chú rể">
             </div>
 
             <!-- Nội dung -->
             <div class="groom-content">
                 <div>
-                    <img class="groom-icon" loading="lazy" decoding="async"
+                    <img class="groom-icon"
                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture5.webp"
                         alt="chú rể icon">
                 </div>
@@ -2110,7 +2115,7 @@
             <!-- Nội dung -->
             <div class="bride-content">
                 <div>
-                    <img class="bride-icon" loading="lazy" decoding="async"
+                    <img class="bride-icon"
                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picturebride.webp"
                         alt="cô dâu icon">
                 </div>
@@ -2128,7 +2133,7 @@
             <!-- Ảnh -->
             <div class="bride-image">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03177.webp"
-                    loading="lazy" decoding="async" alt="Cô dâu">
+                     alt="Cô dâu">
             </div>
 
         </div>
@@ -2139,17 +2144,17 @@
 
         <div class="album-grid">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02460.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 1">
+                 alt="Ảnh cưới 1">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02910.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 2">
+                 alt="Ảnh cưới 2">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03055.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 3">
+                 alt="Ảnh cưới 3">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03122.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 4">
+                 alt="Ảnh cưới 4">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03173.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 5">
+                 alt="Ảnh cưới 5">
             <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM01867.webp"
-                loading="lazy" decoding="async" alt="Ảnh cưới 6">
+                 alt="Ảnh cưới 6">
         </div>
     </section>
     <!-- Chuyện chúng mình -->
@@ -2158,7 +2163,7 @@
 
             <div class="story-text scroll-animate">
                 <div class="story-icon">
-                    <img class="groom-icon" loading="lazy" decoding="async"
+                    <img class="groom-icon" 
                         src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/pitcture9.webp"
                         alt="chuyện chúng mình icon">
                 </div>
@@ -2173,7 +2178,7 @@
 
             <div class="story-image scroll-animate">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02852.webp"
-                    loading="lazy" decoding="async" alt="Chuyện chúng mình">
+                     alt="Chuyện chúng mình">
             </div>
 
         </div>
@@ -2181,7 +2186,7 @@
     <!-- NGÀY 18 - 09 - 2023 -->
     <section class="timeline-section">
         <div class="timeline-icon">
-            <img class="groom-icon" loading="lazy" decoding="async"
+            <img class="groom-icon" 
                 src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture10.webp"
                 alt="chuyện chúng mình icon">
         </div>
@@ -2194,7 +2199,7 @@
 
             <div class="timeline-image scroll-animate">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03311.webp"
-                    loading="lazy" decoding="async" alt="Lần đầu gặp nhau">
+                     alt="Lần đầu gặp nhau">
             </div>
 
             <div class="timeline-line">
@@ -2205,15 +2210,14 @@
                 <h3>
                     Lần đầu gặp nhau
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
-                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon icon_hidden">
+                         alt="Lần đầu gặp nhau" class="event_icon icon_hidden">
                 </h3>
                 <div class="timeline-contentmobile scroll-animate">
                     07 - 11 - 2022
                 </div>
                 <div class="content-line"></div>
                 <p>
-                    Chúng tôi gặp nhau trong một khoảnh khắc rất bình thường, nhưng lại mở ra một hành trình rất đặc
-                    biệt!
+                    Chúng tôi gặp nhau khi làm cùng bộ phận trong một công ty tưởng chừng chỉ là những đồng nghiệp bình thường, nhưng lại mở ra hành trình rất đặt biệt bởi câu nói :"Em không yêu anh Linh đâu, có hợp tuổi đâu mà yêu"
                 </p>
             </div>
 
@@ -2232,7 +2236,7 @@
                 <h3>
 
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
-                        loading="lazy" decoding="async" alt="Chuyến đi đầu tiên" class="event_icon icon_hidden">
+                         alt="Chuyến đi đầu tiên" class="event_icon icon_hidden">
                     Chuyến đi đầu tiên
 
                 </h3>
@@ -2252,7 +2256,7 @@
 
             <div class="timeline-image scroll-animate">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03339.webp"
-                    loading="lazy" decoding="async" alt="Chuyến đi đầu tiên">
+                     alt="Chuyến đi đầu tiên">
             </div>
         </div>
     </section>
@@ -2266,7 +2270,7 @@
 
             <div class="timeline-image scroll-animate">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03698.webp"
-                    loading="lazy" decoding="async" alt="Kỷ niệm đáng nhớ">
+                     alt="Kỷ niệm đáng nhớ">
             </div>
 
             <div class="timeline-line">
@@ -2277,7 +2281,7 @@
                 <h3>
                     Kỷ niệm đáng nhớ
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
-                        loading="lazy" decoding="async" alt="Kỷ niệm đáng nhớ" class="event_icon icon_hidden">
+                         alt="Kỷ niệm đáng nhớ" class="event_icon icon_hidden">
                 </h3>
                 <div class="timeline-contentmobile scroll-animate">
                     11 - 05 - 2025
@@ -2301,7 +2305,7 @@
             <div class="event-item scroll-animate">
                 <div class="event-icon">
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture12.webp"
-                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                         alt="Lần đầu gặp nhau" class="event_icon">
                 </div>
                 <h3>Ăn hỏi</h3>
                 <div class="event-line"></div>
@@ -2318,7 +2322,7 @@
             <div class="event-item scroll-animate">
                 <div class="event-icon">
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture13.webp"
-                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                         alt="Lần đầu gặp nhau" class="event_icon">
                 </div>
                 <h3>Đón dâu</h3>
                 <div class="event-line"></div>
@@ -2333,7 +2337,7 @@
             <div class="event-item scroll-animate">
                 <div class="event-icon">
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture14.webp"
-                        loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon">
+                         alt="Lần đầu gặp nhau" class="event_icon">
                 </div>
                 <h3>Tiệc cưới</h3>
                 <div class="event-line"></div>
@@ -2353,7 +2357,7 @@
             <div class="guestbook-love">
                 <img class="homthu-icon"
                     src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/homthu.webp"
-                    loading="lazy" decoding="async" alt="love">
+                     alt="love">
             </div>
 
             <div class="guestbook-title">
@@ -2427,7 +2431,7 @@
             <div class="gift-box">
                 <img class="gift-icon"
                     src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture16.webp"
-                    loading="lazy" decoding="async" alt="Icon">
+                     alt="Icon">
 
                 <div class="gift-title">Hộp mừng cưới</div>
 
@@ -2440,22 +2444,22 @@
                 <div class="gift-qr">
                     <div class="gift-qr-item">
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture8-Photoroom.webp"
-                            loading="lazy" decoding="async" alt="QR cô dâu">
+                             alt="QR cô dâu">
                         <h4>Mừng cưới đến cô dâu</h4>
                         <p>Ngân hàng Techcombank</p>
                         <p>1903 5609 7380 13</p>
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_codau.webp"
-                            loading="lazy" decoding="async" alt="QR cô dâu" class="qr-thumb">
+                             alt="QR cô dâu" class="qr-thumb">
                     </div>
 
                     <div class="gift-qr-item">
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture7-Photoroom.webp"
-                            loading="lazy" decoding="async" alt="QR chú rể">
+                             alt="QR chú rể">
                         <h4>Mừng cưới đến chú rể</h4>
                         <p>Ngân hàng Techcombank</p>
                         <p>1903 6462 5720 13</p>
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_chure.webp"
-                            loading="lazy" decoding="async" alt="QR chú rể" class="qr-thumb">
+                             alt="QR chú rể" class="qr-thumb">
                     </div>
                 </div>
             </div>
@@ -2463,7 +2467,7 @@
             <!-- PHẢI -->
             <div class="gift-image">
                 <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM03000.webp"
-                    loading="lazy" decoding="async" alt="Cô dâu chú rể">
+                     alt="Cô dâu chú rể">
             </div>
 
         </div>
