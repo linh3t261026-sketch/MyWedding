@@ -92,6 +92,9 @@
                 transform: translateX(100%);
             }
         }
+        .timeline-contentmobile{
+            display: none;
+        }
 
 
         .heart {
@@ -1597,6 +1600,11 @@
                 z-index: 2;
             }
 
+            
+
+
+
+
             #first-trip {
                 transform: none !important;
                 padding-left: 0 !important;
@@ -1756,16 +1764,44 @@
             .icon_hidden{
                 display: none !important;
             }
+            .timeline-date{
+                display: none !important;
+            }
+            .timeline-container.reverse .timeline-content {
+                text-align: center;
+                font-size: 18px;
+                letter-spacing: 2px;
+                color: #e0a57c;
+            }
+            .timeline-contentmobile{
+            display: block;
+                font-size: 18px;
+                letter-spacing: 2px;
+                color: #e0a57c;
+            }
+            .timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .timeline-content {
+    order: 1;
+    text-align: center;
+  }
 
-            /*.bomb-icon {
-                width: 40px;
-                height: 40px;
-                opacity: 0.9;
-                margin-bottom: 20px;
-                display: block;
-            }*/
-        }
+  .timeline-line {
+    order: 2;
+    margin: 10px 0;
+  }
+
+  .timeline-image {
+    order: 3;
+  }
+   
+            }
+           
+        
     </style>
 
 </head>
@@ -2120,6 +2156,9 @@
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
                         loading="lazy" decoding="async" alt="Lần đầu gặp nhau" class="event_icon icon_hidden">
                 </h3>
+                <div class="timeline-contentmobile scroll-animate">
+                    07 - 11 - 2022
+                </div>
                 <div class="content-line"></div>
                 <p>
                     Chúng tôi gặp nhau trong một khoảnh khắc rất bình thường, nhưng lại mở ra một hành trình rất đặc
@@ -2140,10 +2179,15 @@
 
             <div class="timeline-content scroll-animate" id="first-trip">
                 <h3>
+                    
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
                         loading="lazy" decoding="async" alt="Chuyến đi đầu tiên" class="event_icon icon_hidden">
                     Chuyến đi đầu tiên
+                    
                 </h3>
+                <div class="timeline-contentmobile scroll-animate">
+                        29 - 12 - 2024
+                </div>
                 <div class="content-line"></div>
                 <p>
                     Chuyến đi đầu tiên không quá dài, nhưng đủ để chúng tôi hiểu rằng: đi cùng nhau quan trọng hơn là đi
@@ -2184,6 +2228,9 @@
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
                         loading="lazy" decoding="async" alt="Kỷ niệm đáng nhớ" class="event_icon icon_hidden">
                 </h3>
+                <div class="timeline-contentmobile scroll-animate">
+                    11 - 05 - 2025
+                </div>
                 <div class="content-line"></div>
                 <p>
                     Giữa những điều bình dị của cuộc sống, chúng tôi đã cùng nhau tạo nên những kỷ niệm nhỏ bé nhưng đủ
