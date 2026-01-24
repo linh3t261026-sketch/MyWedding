@@ -34,7 +34,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-  
+
 
 
 
@@ -92,7 +92,8 @@
                 transform: translateX(100%);
             }
         }
-        .timeline-contentmobile{
+
+        .timeline-contentmobile {
             display: none;
         }
 
@@ -1419,6 +1420,23 @@
             white-space: nowrap;
         }
 
+        #qr-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #qr-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            background: #fff;
+        }
+
         @media (max-width: 600px) {
 
             /* ===== GLOBAL ===== */
@@ -1600,7 +1618,7 @@
                 z-index: 2;
             }
 
-            
+
 
 
 
@@ -1761,47 +1779,50 @@
                 display: inline-block;
                 vertical-align: middle;
             }
-            .icon_hidden{
+
+            .icon_hidden {
                 display: none !important;
             }
-            .timeline-date{
+
+            .timeline-date {
                 display: none !important;
             }
+
             .timeline-container.reverse .timeline-content {
                 text-align: center;
                 font-size: 18px;
                 letter-spacing: 2px;
                 color: #e0a57c;
             }
-            .timeline-contentmobile{
-            display: block;
+
+            .timeline-contentmobile {
+                display: block;
                 font-size: 18px;
                 letter-spacing: 2px;
                 color: #e0a57c;
             }
+
             .timeline-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-content {
-    order: 1;
-    text-align: center;
-  }
-
-  .timeline-line {
-    order: 2;
-    margin: 10px 0;
-  }
-
-  .timeline-image {
-    order: 3;
-  }
-   
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-           
-        
+
+            .timeline-content {
+                order: 1;
+                text-align: center;
+            }
+
+            .timeline-line {
+                order: 2;
+                margin: 10px 0;
+            }
+
+            .timeline-image {
+                order: 3;
+            }
+
+        }
     </style>
 
 </head>
@@ -2179,14 +2200,14 @@
 
             <div class="timeline-content scroll-animate" id="first-trip">
                 <h3>
-                    
+
                     <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/picture11.webp"
                         loading="lazy" decoding="async" alt="Chuyến đi đầu tiên" class="event_icon icon_hidden">
                     Chuyến đi đầu tiên
-                    
+
                 </h3>
                 <div class="timeline-contentmobile scroll-animate">
-                        29 - 12 - 2024
+                    29 - 12 - 2024
                 </div>
                 <div class="content-line"></div>
                 <p>
@@ -2327,37 +2348,43 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label>Bạn là khách mời của ai?</label>
-                <div class="option">
-                    <label><input type="checkbox" name="guestOf" value="Cô Dâu"> Cô Dâu</label>
-                    <label><input type="checkbox" name="guestOf" value="Chú Rể"> Chú Rể</label>
+
+            <div id="join-extra">
+                <div class="form-group">
+                    <label>Bạn là khách mời của ai?</label>
+                    <div class="option">
+                        <label><input type="checkbox" name="guestOf" value="Cô Dâu"> Cô Dâu</label>
+                        <label><input type="checkbox" name="guestOf" value="Chú Rể"> Chú Rể</label>
+                    </div>
+
                 </div>
+                <div class="form-group">
+                    <label>Bạn sẽ tham gia bữa tiệc nào?</label>
+                    <select name="party">
+                        <option value="Nhà gái">Tiệc nhà gái</option>
+                        <option value="Nhà trai">Tiệc nhà trai</option>
+                        <option value="Cả hai">Cả hai</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Bạn đi bao nhiêu người?</label>
+                    <select name="people">
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Gửi lời chúc mừng cho cô dâu chú rể</label>
+                    <textarea name="message" placeholder="Nhập lời chúc của bạn (tối đa 3000 ký tự) *"></textarea>
+                </div>
+
             </div>
 
-            <div class="form-group">
-                <label>Bạn sẽ tham gia bữa tiệc nào?</label>
-                <select name="party">
-                    <option value="Nhà gái">Tiệc nhà gái</option>
-                    <option value="Nhà trai">Tiệc nhà trai</option>
-                    <option value="Cả hai">Cả hai</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                <label>Bạn đi bao nhiêu người?</label>
-                <select name="people">
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Gửi lời chúc mừng cho cô dâu chú rể</label>
-                <textarea name="message" placeholder="Nhập lời chúc của bạn (tối đa 3000 ký tự) *"></textarea>
-            </div>
             <button type="submit">Phản hồi</button>
 
         </div>
@@ -2388,7 +2415,7 @@
                         <p>Ngân hàng Techcombank</p>
                         <p>1903 5609 7380 13</p>
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_codau.webp"
-                            loading="lazy" decoding="async" alt="QR cô dâu">
+                            loading="lazy" decoding="async" alt="QR cô dâu" class="qr-thumb">
                     </div>
 
                     <div class="gift-qr-item">
@@ -2398,7 +2425,7 @@
                         <p>Ngân hàng Techcombank</p>
                         <p>1903 6462 5720 13</p>
                         <img src="https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/qr_chure.webp"
-                            loading="lazy" decoding="async" alt="QR chú rể">
+                            loading="lazy" decoding="async" alt="QR chú rể" class="qr-thumb">
                     </div>
                 </div>
             </div>
@@ -2411,6 +2438,9 @@
 
         </div>
     </section>
+    <div id="qr-overlay">
+        <img id="qr-full" src="" alt="QR full">
+    </div>
 
 
 
@@ -2420,19 +2450,74 @@
     <script>
         document.getElementById("guestbook").addEventListener("submit", function (e) {
             e.preventDefault();
+            const fullname = this.fullname.value.trim();
+            const phone = this.phone.value.trim();
+            const joinChecked = this.querySelector('input[name="join"]:checked');
+            const guestOfChecked = this.querySelectorAll('input[name="guestOf"]:checked');
+            if (!fullname) {
+                alert("Vui lòng nhập họ tên");
+                return;
+            }
+
+            if (!phone) {
+                alert("Vui lòng nhập số điện thoại");
+                return;
+            }
+
+            if (!joinChecked) {
+                alert("Vui lòng chọn bạn có tham gia hay không");
+                return;
+            }
+
+            if (joinChecked.value === "Có" && guestOfChecked.length === 0) {
+                alert("Vui lòng chọn bạn là khách mời của ai");
+                return;
+            }
+
             const formData = new FormData(this);
-  const guestOf = [];
-  this.querySelectorAll('input[name="guestOf"]:checked')
-    .forEach(cb => guestOf.push(cb.value));
-    formData.set("guestOf", guestOf.join(", "));
+            const guestOf = [];
+            this.querySelectorAll('input[name="guestOf"]:checked')
+                .forEach(cb => guestOf.push(cb.value));
+            formData.set("guestOf", guestOf.join(", "));
 
             fetch("https://script.google.com/macros/s/AKfycbwQNc18uc95u-QzgtmwER3UAFmAXzAHL_2RFkesjoLOrpGBrWdvW77IE3nlVDrM64F7Sg/exec", {
                 method: "POST",
                 body: formData
             })
                 .then(res => res.text())
-                .then(() => alert("Gửi thành công 💖"))
-                .catch(err => console.error(err));
+                .then(() => {
+                    alert("Cảm ơn bạn đã gửi những lời chúc tuyệt vời đến dâu rể 💖");
+                    this.reset(); // 🔥 RESET FORM SAU KHI GỬI THÀNH CÔNG
+                })
+                .catch(err => {
+                    alert("Có lỗi xảy ra, vui lòng thử lại sau");
+                    console.error(err);
+                });
+        });
+    </script>
+    <script>
+        const joinRadios = document.querySelectorAll('input[name="join"]');
+        const joinExtra = document.getElementById('join-extra');
+
+        joinExtra.style.display = 'none'; // mặc định ẩn
+
+        joinRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.value === 'Có') {
+                    joinExtra.style.display = 'block';
+                } else {
+                    joinExtra.style.display = 'none';
+
+                    // reset các ô bên trong khi chọn "Không"
+                    joinExtra.querySelectorAll('input, select').forEach(el => {
+                        if (el.type === 'checkbox' || el.type === 'radio') {
+                            el.checked = false;
+                        } else {
+                            el.value = '';
+                        }
+                    });
+                }
+            });
         });
     </script>
     <!-- SCRIPT SLIDE -->
@@ -2657,6 +2742,27 @@
             setTimeout(() => {
                 document.getElementById('red-envelope')?.remove();
             }, 1700);
+        });
+    </script>
+     <!-- QR full size-->
+    <script>
+        const qrThumbs = document.querySelectorAll(".qr-thumb");
+        const overlay = document.getElementById("qr-overlay");
+        const qrFull = document.getElementById("qr-full");
+
+        qrThumbs.forEach(img => {
+            img.addEventListener("click", () => {
+                qrFull.src = img.src;
+                overlay.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        // Click ra ngoài để đóng
+        overlay.addEventListener("click", () => {
+            overlay.style.display = "none";
+            qrFull.src = "";
+            document.body.style.overflow = "";
         });
     </script>
 
