@@ -1437,6 +1437,35 @@
             background: #fff;
         }
 
+        #loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: #fff;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 12px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         @media (max-width: 600px) {
 
             /* ===== GLOBAL ===== */
@@ -2441,6 +2470,10 @@
     <div id="qr-overlay">
         <img id="qr-full" src="" alt="QR full">
     </div>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Đang gửi lời chúc...</p>
+    </div>
 
 
 
@@ -2448,6 +2481,7 @@
         © 2026 Linh & Tho · Trân trọng cảm ơn
     </footer>
     <script>
+        const loading = document.getElementById("loading-overlay");
         document.getElementById("guestbook").addEventListener("submit", function (e) {
             e.preventDefault();
             const fullname = this.fullname.value.trim();
@@ -2473,6 +2507,8 @@
                 alert("Vui lòng chọn bạn là khách mời của ai");
                 return;
             }
+            loading.style.display = "flex";     
+            document.body.style.overflow = "hidden";
 
             const formData = new FormData(this);
             const guestOf = [];
@@ -2486,10 +2522,14 @@
             })
                 .then(res => res.text())
                 .then(() => {
+                    loading.style.display = "none";    // 🔥 TẮT LOADING
+                    document.body.style.overflow = "";
                     alert("Cảm ơn bạn đã gửi những lời chúc tuyệt vời đến dâu rể 💖");
                     this.reset(); // 🔥 RESET FORM SAU KHI GỬI THÀNH CÔNG
                 })
                 .catch(err => {
+                    loading.style.display = "none";
+                    document.body.style.overflow = "";
                     alert("Có lỗi xảy ra, vui lòng thử lại sau");
                     console.error(err);
                 });
@@ -2744,7 +2784,7 @@
             }, 1700);
         });
     </script>
-     <!-- QR full size-->
+    <!-- QR full size-->
     <script>
         const qrThumbs = document.querySelectorAll(".qr-thumb");
         const overlay = document.getElementById("qr-overlay");
