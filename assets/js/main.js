@@ -85,7 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             fetch("https://script.google.com/macros/s/AKfycbwQNc18uc95u-QzgtmwER3UAFmAXzAHL_2RFkesjoLOrpGBrWdvW77IE3nlVDrM64F7Sg/exec", {
                 method: "POST",
-                body: formData
+                body: formData,
+                mode: "no-cors"
             })
                 .then(res => res.text())
                 .then(() => {
