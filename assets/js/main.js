@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     /* ===== SLIDE ===== */
     const images = [
-        "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02937.webp",
-        "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02052.webp",
-        "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02494.webp",
-        "https://cdn.jsdelivr.net/gh/linh3t261026-sketch/mywedding-assets/images/TOM02869.webp"
+        "assets/images/TOM02937.webp",
+        "assets/images/TOM02052.webp",
+        "assets/images/TOM02494.webp",
+        "assets/images/TOM02869.webp"
     ];
 
     let index = 0;
